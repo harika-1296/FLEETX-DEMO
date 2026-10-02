@@ -1,0 +1,96 @@
+import type { Task } from './types';
+import { warehouse } from './warehouse';
+
+export function createInitialTasks(): Task[] {
+  return [
+    {
+      id: 'TASK-101',
+      pickup: 'Pickup A',
+      pickupPos: warehouse.pickupZones[0].pos,
+      drop: 'Drop D',
+      dropPos: warehouse.dropZones[0].pos,
+      assignedAMR: 'AMR-01',
+      priority: 'HIGH',
+      status: 'IN_PROGRESS',
+      eta: 18,
+      createdAt: 0,
+      completedAt: null,
+      progress: 0,
+    },
+    {
+      id: 'TASK-102',
+      pickup: 'Pickup B',
+      pickupPos: warehouse.pickupZones[1].pos,
+      drop: 'Drop E',
+      dropPos: warehouse.dropZones[1].pos,
+      assignedAMR: 'AMR-02',
+      priority: 'NORMAL',
+      status: 'IN_PROGRESS',
+      eta: 22,
+      createdAt: 0,
+      completedAt: null,
+      progress: 0,
+    },
+    {
+      id: 'TASK-103',
+      pickup: 'Pickup C',
+      pickupPos: warehouse.pickupZones[2].pos,
+      drop: 'Drop F',
+      dropPos: warehouse.dropZones[2].pos,
+      assignedAMR: 'AMR-03',
+      priority: 'HIGH',
+      status: 'IN_PROGRESS',
+      eta: 25,
+      createdAt: 0,
+      completedAt: null,
+      progress: 0,
+    },
+    {
+      id: 'TASK-104',
+      pickup: 'Pickup A',
+      pickupPos: warehouse.pickupZones[0].pos,
+      drop: 'Drop E',
+      dropPos: warehouse.dropZones[1].pos,
+      assignedAMR: 'AMR-04',
+      priority: 'NORMAL',
+      status: 'ASSIGNED',
+      eta: 30,
+      createdAt: 0,
+      completedAt: null,
+      progress: 0,
+    },
+    {
+      id: 'TASK-105',
+      pickup: 'Pickup B',
+      pickupPos: warehouse.pickupZones[1].pos,
+      drop: 'Drop F',
+      dropPos: warehouse.dropZones[2].pos,
+      assignedAMR: 'AMR-05',
+      priority: 'LOW',
+      status: 'ASSIGNED',
+      eta: 35,
+      createdAt: 0,
+      completedAt: null,
+      progress: 0,
+    },
+    {
+      id: 'TASK-106',
+      pickup: 'Pickup C',
+      pickupPos: warehouse.pickupZones[2].pos,
+      drop: 'Drop D',
+      dropPos: warehouse.dropZones[0].pos,
+      assignedAMR: null,
+      priority: 'NORMAL',
+      status: 'PENDING',
+      eta: 28,
+      createdAt: 0,
+      completedAt: null,
+      progress: 0,
+    },
+  ];
+}
+
+let taskCounter = 107;
+export function generateTaskId(): string {
+  return `TASK-${taskCounter++}`;
+}
